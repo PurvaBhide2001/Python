@@ -1,0 +1,50 @@
+Q.1]10 MARKS Write a python program which create a lambda function that multiplies argument x with 
+argument y and print the result.
+
+# Define the lambda function
+multiply = lambda x, y: x * y
+
+# Test the lambda function
+result = multiply(5, 6)
+print(result)
+******************************************************************************************
+Q.2]20 MARKS Write a python program to display all files in directory and subdirectories
+
+import os
+
+def list_files(directory):
+    # Iterate through the files and directories in the specified directory
+    for item in os.listdir(directory):
+        # Construct the full path of the item
+        item_path = os.path.join(directory, item)
+        # If the item is a file, print its name
+        if os.path.isfile(item_path):
+            print(item)
+        # If the item is a directory, recursively call the function to list its files
+        elif os.path.isdir(item_path):
+            list_files(item_path)
+
+# Test the function with the current directory
+list_files('.')
+********************************************************************************************
+				OR
+Q.2]20 MARKS 
+OR QUESTION Write a python program to delete repeated lines from a file.
+
+def delete_duplicate_lines(filename):
+    # Open the file in read mode
+    with open(filename, 'r') as file:
+        # Read the lines of the file into a list
+        lines = file.readlines()
+    
+    # Remove duplicates from the list of lines
+    lines = list(set(lines))
+    
+    # Open the file in write mode
+    with open(filename, 'w') as file:
+        # Write the unique lines back to the file
+        for line in lines:
+            file.write(line)
+
+# Test the function with a sample file
+delete_duplicate_lines('sample.txt')
