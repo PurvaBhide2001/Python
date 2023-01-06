@@ -1,0 +1,51 @@
+Q.1]10 MARKS Write a python program to show use of multiple exception handing.
+
+def divide(x, y):
+  try:
+    result = x / y
+  except ZeroDivisionError:
+    print("Division by zero!")
+  except TypeError:
+    print("Invalid type(s) for division")
+  else:
+    print("Result is", result)
+
+divide(2, 1)
+divide(2, 0)
+divide("2", "1")
+----------------------------------------------------------------------------------------
+
+Q.2]20 MARKS Write a python function to check whether a number is perfect or not.
+
+n = int(input("Enter any number: "))
+sum1 = 0
+for i in range(1, n):
+    if(n % i == 0):
+        sum1 = sum1 + i
+if (sum1 == n):
+    print("The number is a Perfect number!")
+else:
+    print("The number is not a Perfect number!")
+-------------------------------------------------------------------------------------------------------------------------
+				OR
+
+
+Q.2]20 MARKS // OR QUESTION // Write a python program to display only those words from the text file which contains three 
+characters in it.
+
+# Open the file for reading
+with open('textfile.txt', 'r') as file:
+  # Iterate over each line in the file
+  for line in file:
+    # Split the line into a list of words
+    words = line.split()
+    
+    # Iterate over each word in the line
+    for word in words:
+      # Check if the word has 3 characters
+      if len(word) == 3:
+        # Print the word
+        print(word)
+
+
+
