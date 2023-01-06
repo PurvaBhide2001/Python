@@ -1,0 +1,73 @@
+Q.1]10 MARKS . Write a python program to show use of finally clause of exception handling
+
+def divide(x, y):
+  try:
+    result = x / y
+  except ZeroDivisionError:
+    print("Division by zero!")
+  else:
+    print("Result is", result)
+  finally:
+    print("Executing finally clause")
+
+divide(2, 1)
+divide(2, 0)
+divide(3, 2)
+------------------------------------------------------------------------------------------------
+
+Q.2]20 MARKS  Write a program that returns a list that contains only the elements that are common 
+between the lists (without duplicates). Make sure your program works on two lists of different 
+sizes. 
+
+def common_elements(list1, list2):
+  # Convert the lists to sets and find the intersection
+  common_set = set(list1) & set(list2)
+  
+  # Convert the set back to a list and return it
+  return list(common_set)
+
+# Test the function with two lists of different sizes
+list1 = [1, 2, 3, 4, 5]
+list2 = [3, 4, 5, 6, 7, 8]
+print(common_elements(list1, list2))
+--------------------------------------------------------------------------------------------------------------
+						OR
+
+Q.2]20 MARKS // OR QUESTION //  Write a python program which accepts file name and word to be searched in file. 
+Display line numbers which contain given word and total occurrences of it.
+
+
+import sys
+
+def find_word(filename, word):
+  # Initialize the line number and the count
+  line_number = 0
+  count = 0
+  
+  # Open the file
+  with open(filename, 'r') as file:
+    # Iterate over each line in the file
+    for line in file:
+      # Increment the line number
+      line_number += 1
+      
+      # Split the line into a list of words
+      words = line.split()
+      
+      # Iterate over each word in the line
+      for w in words:
+        # If the word matches the search word, increment the count
+        if w == word:
+          count += 1
+          # Print the line number
+          print("Line", line_number, ":", line.strip())
+  
+  # Print the total count
+  print("Total occurrences:", count)
+
+# Get the file name and the search word from the command line
+filename = sys.argv[1]
+word = sys.argv[2]
+
+# Call the find_word function
+find_word(filename, word)

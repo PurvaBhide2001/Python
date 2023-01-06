@@ -1,0 +1,82 @@
+SLIP 14 
+10 MARKS Write a program which checks whether given element exists within a tuple. 
+def element_exists(tup, element):
+    # Iterate through the elements in the tuple
+    for e in tup:
+        # If the element is found, return True
+        if e == element:
+            return True
+    # If the element is not found, return False
+    return False
+
+# Test the function with a sample tuple and element
+print(element_exists((1, 2, 3, 4, 5), 3))
+print(element_exists((1, 2, 3, 4, 5), 3))
+
+
+20 MARKS Write a Python program to find the greatest common divisor (gcd) of two integers.
+def gcd(a, b):
+    # If one of the numbers is 0, return the other number
+    if a == 0:
+        return b
+    if b == 0:
+        return a
+    # If both numbers are the same, return the number
+    if a == b:
+        return a
+    # If one of the numbers is even, divide it by 2 and check the gcd again
+    if a % 2 == 0:
+        return gcd(a // 2, b)
+    if b % 2 == 0:
+        return gcd(a, b // 2)
+    # If both numbers are odd, use the Euclidean algorithm
+    if a > b:
+        return gcd((a - b) // 2, b)
+    return gcd((b - a) // 2, a)
+
+# Test the function with two sample integers
+print(gcd(12, 16))
+print(gcd(60, 48))
+
+
+20 MARKS 
+OR QUESTION Define a class Student having members – rollno, name, age, gender. Create a subclass 
+called ?Test with member marks of 3 subjects. Create three objects of the Test class and
+display all the details of the student with percentage.
+class Student:
+    def __init__(self, rollno, name, age, gender):
+        self.rollno = rollno
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+class Test(Student):
+    def __init__(self, rollno, name, age, gender, marks):
+        super().__init__(rollno, name, age, gender)
+        self.marks = marks
+    
+    def percentage(self):
+        return sum(self.marks) / len(self.marks)
+# Create three test objects
+test1 = Test(1, 'Alice', 20, 'Female', [80, 85, 90])
+test2 = Test(2, 'Bob', 21, 'Male', [75, 80, 85])
+test3 = Test(3, 'Charlie', 22, 'Male', [70, 75, 80])
+
+# Display the details and percentage of each student
+print(f'Roll No.: {test1.rollno}')
+print(f'Name: {test1.name}')
+print(f'Age: {test1.age}')
+print(f'Gender: {test1.gender}')
+print(f'Percentage: {test1.percentage()}')
+print()
+print(f'Roll No.: {test2.rollno}')
+print(f'Name: {test2.name}')
+print(f'Age: {test2.age}')
+print(f'Gender: {test2.gender}')
+print(f'Percentage: {test2.percentage()}')
+print()
+print(f'Roll No.: {test3.rollno}')
+print(f'Name: {test3.name}')
+print(f'Age: {test3.age}')
+print(f'Gender: {test3.gender}')
+print(f'Percentage: {test3.percentage()}')

@@ -1,0 +1,57 @@
+Slip 13
+10 MARKS Write a python program to accept n elements in a set and find the length of a set, maximum, minimum value and the sum of values in a set.
+def MAX(sets):
+    return (max(sets))
+      
+# Driver Code
+
+sets = set([8, 16, 24, 1, 25, 3, 10, 65, 55])
+print(MAX(sets))
+
+# Python code to get the minimum element from a set
+def MIN(sets):
+    return (min(sets))
+      
+# Driver Code
+sets = set([4, 12, 10, 9, 4, 13])
+print(MIN(sets))
+
+
+20 MARKS Write a python program that accepts a sentence and calculate the number of letters and 
+digits in it.
+def count_letters_digits(sentence):
+    # Initialize counters for letters and digits
+    letter_count = 0
+    digit_count = 0
+    # Iterate through the characters in the sentence
+    for c in sentence:
+        # If the character is a letter, increment the letter counter
+        if c.isalpha():
+            letter_count += 1
+        # If the character is a digit, increment the digit counter
+        elif c.isdigit():
+            digit_count += 1
+    # Return the counts
+    return letter_count, digit_count
+
+# Test the function with a sample sentence
+print(count_letters_digits('This is a Sample Sentence with 123 Numbers'))
+
+
+20 MARKS 
+OR QUESTION Write a python program to create a class Circle and compute the area and the 
+circumference of the Circle. (Use parameterized constructor).
+import math
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return math.pi * self.radius**2
+    def circumference(self):
+        return 2 * math.pi * self.radius
+# Create a circle object with radius 5
+circle = Circle(5)
+# Compute and display the area and circumference of the circle
+print(f'Area: {circle.area()}')
+print(f'Circumference: {circle.circumference()}')

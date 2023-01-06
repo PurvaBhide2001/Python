@@ -1,0 +1,22 @@
+Q1]Write a python program to create a lambda function that adds 15 to a given number 
+passed in as an argument.
+Ans:
+
+r = lambda a : a + 15
+print(r(10))
+***************************************************************************************
+Q.2]Write a python program to print following pattern using loop. 
+A
+B C 
+D E F
+G H I J
+
+Ans:
+ascii_number = 65
+rows = 4
+for i in range(0, rows):
+    for j in range(0, i + 1):
+        character = chr(ascii_number)
+        print(character, end=' ')
+        ascii_number += 1
+    print(" ")
